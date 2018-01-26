@@ -22,11 +22,23 @@ class Building extends Model
 {
     protected $fillable = [
         'name',
-        'description'
+        'sold',
+        'soldOut',
+        'block',
+        'city',
+        'contract',
+        'finished',
+        'mainImage',
+        'pdfCatalogUrl',
+        'pdfCatalogImage'
     ];
 
     public function floors()
     {
         return $this->hasMany('App\Models\Floor', 'id', 'building');
+    }
+    public function locations()
+    {
+        return $this->hasMany('App\Models\Location', 'id', 'building');
     }
 }

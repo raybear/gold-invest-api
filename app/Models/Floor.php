@@ -37,4 +37,9 @@ class Floor extends Model
     public function building() {
         return $this->belongsTo('App\Models\Building', 'building', 'id');
     }
+
+    public function apartments()
+    {
+        return $this->hasMany('App\Models\Apartment', 'id', 'floor');
+    }
 }
