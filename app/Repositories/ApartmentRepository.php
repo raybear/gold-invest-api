@@ -90,4 +90,16 @@ class ApartmentRepository implements IApartmentRepository
         return $this->model->find($id)->update($apartment);
     }
 
+    function getAvailableApartments()
+    {
+        // Return count and subtract garages statically
+        // TODO: Split garage to separate repository to avoid static counts and hard code
+        return $this->model->where('status', '!=', 'Prodato')->count() - 12;
+    }
+
+    function getSoldApartments()
+    {
+        // Return count and add static sold from first 3 buildings
+        return $this->model->where('status', '=', 'Prodato')->count() + 35;
+    }
 }

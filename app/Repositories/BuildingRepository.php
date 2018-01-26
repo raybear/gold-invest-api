@@ -93,4 +93,14 @@ class BuildingRepository implements IBuildingRepository
     {
         return $this->model->find($id)->delete();
     }
+
+    function getBuildingFinishedCount()
+    {
+        return $this->model->where('block', '=', false)->count();
+    }
+
+    function getBuildingInProgressCount()
+    {
+        return $this->model->where('block', '=', true)->count();
+    }
 }

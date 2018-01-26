@@ -62,4 +62,7 @@ interface IApartmentRepository
      */
     function update($id, $apartment);
 
+    function getAvailableApartments();
+
+    function getSoldApartments();
 }

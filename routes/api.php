@@ -48,5 +48,4 @@ Route::get('/floors/{floorId}/apartments', 'ApartmentController@getAllByFloor');
 Route::get('/floors/apartments/room/{id}', 'RoomController@getById');
 Route::get('floors/apartments/{apartmentId}/rooms', 'RoomController@getAllByApartment');
 
-
-
+Route::get('/statistics', 'StatisticController@getStatistics');

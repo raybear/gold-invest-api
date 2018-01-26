@@ -61,4 +61,8 @@ interface IBuildingRepository
      * @throws \Exception
      */
     function delete($id);
+
+    function getBuildingFinishedCount();
+
+    function getBuildingInProgressCount();
 }
